@@ -1,0 +1,20 @@
+<!-- table>(thead>tr>th*4)+(tbody>tr>td*4) [Tab]-->
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Bearbeitung</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items">
+    <td>{{item.id}}</td>
+    <td>{{item.fullname}}</td>
+    <td>{{item.amount}}</td>
+    <td><button (click)="tableEvent(item)">Löschen</button></td>
+    <td><button (click)="editEvent(item)">Editieren</button></td>
+  </tr>
+  </tbody>
+</table>

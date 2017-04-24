@@ -1,0 +1,49 @@
+<h1>Template Syntax</h1>
+<h2>Interpolation Directive</h2>
+<p>Geschweifte Klammern</p>
+{{3 + 6}}<br>
+{{'text' | uppercase}}<br>
+{{info | uppercase}}<br>
+{{test(3)}}<br><br>
+
+<h3>Event Directive</h3>
+<button (click)="change($event)">Click</button><br>
+<textarea (keydown)="key($event)"></textarea><br><br>
+
+<h3>Attribute Directives</h3>
+<p [ngClass]="{teaser:true}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid consequuntur corporis dolore dolores eos eum
+  eveniet, ex molestiae natus optio quidem quis quo recusandae rem repellat sunt tempora unde.</p>
+
+<p [title]="info" [class.teaser]="info === 'Neu'">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, mollitia sit! A accusantium aliquam amet aperiam
+  atque cupiditate dolorum maxime, molestiae necessitatibus, omnis pariatur sit suscipit temporibus? Dolor, placeat,
+  quia.</p><br><br>
+
+<h3>Structural Directives</h3>
+<p *ngIf="true">Lorem ipsum dolor sit amet</p>
+
+<div [ngSwitch]="status">
+  <div *ngSwitchCase="1">output</div>
+  <div *ngSwitchDefault>output2</div>
+</div>
+<br>
+<ul>
+  <li *ngFor="let item of ['Toast','Butter','Milch','Eier']; let i = index; let e = even" [class.teaser]="e">
+    {{i + 1}} {{item}}
+  </li>
+</ul>
+<br>
+<p>{{wert}}</p>
+<input [(ngModel)]="wert">
+<br>
+
+<h3>Pipes</h3>
+<p>{{'text' | uppercase}}</p>
+<p>{{zahl | number:'1.1-2'}}</p>
+<p>{{datum | date}}</p>
+<p>{{amount | currency:'EUR':true:'1.2-2'}}</p>
+<br>
+<br>
+<h3>Component as Directive</h3>
+<app-example [daten]="wert" (onChoose)="change()"></app-example>
+
+

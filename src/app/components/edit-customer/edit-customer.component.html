@@ -1,0 +1,25 @@
+<h1>Kunde bearbeiten</h1>
+  <div class="row form-group">
+    <label class="col-2" for="Name">Name</label>
+
+    <div class="col-10">
+      <input [(ngModel)]="customer.fullname" class="form-control" type="text" required id="Name" #fullname="ngModel">
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <label class="col-2" for="Amount">Amount</label>
+
+    <div class="col-10">
+      <input [(ngModel)]="customer.amount" class="form-control" type="number" required id="Amount" #amount="ngModel">
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="offset-2 col-10">
+      <button [disabled]="fullname.errors || amount.errors" class="btn btn-info" (click)="saveCustomer()">Speichern
+      </button>
+    </div>
+  </div>
+
+
